@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms — Bellavista</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: rgba(248, 247, 244, 0.85); /* полупрозрачный для лучшей читаемости */
+            --text-main: #1a1a1a;
+            --accent: #e3af14;
+            --gray-text: #666;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+            /* Фоновое изображение */
+            background-image: url('pic.png'); /* Укажите правильный путь к файлу */
+            background-size: cover; /* Растягивает изображение на весь экран */
+            background-position: center; /* Центрирует изображение */
+            background-attachment: fixed; /* Фон фиксируется при прокрутке */
+            background-repeat: no-repeat; /* Не повторять изображение */
+            /* Для затемнения фона и улучшения читаемости текста */
+            background-color: rgba(0, 0, 0, 0.3); /* Цвет подложки */
+            background-blend-mode: overlay; /* Смешивание фона и цвета */
+        }
+
+        /* Полупрозрачные блоки для контента */
+        header, .hero, .rooms-container, .faq, footer {
+            background-color: var(--bg-color);
+            backdrop-filter: blur(5px); /* Лёгкое размытие фона за элементами */
+            border-radius: 10px; /* Опционально: скругление углов */
+            margin: 10px; /* Отступы между блоками */
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(248, 247, 244, 0.9); /* Полупрозрачный */
+            backdrop-filter: blur(10px);
+        }
+
+        .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: 2px; text-decoration: none; color: inherit; }
+        
+        .nav-links a { margin: 0 15px; text-decoration: none; color: var(--text-main); font-size: 0.9rem; font-weight: 500; }
+
+        .btn-book {
+            background: var(--text-main);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 5%;
+        }
+
+        .hero h1 { font-size: 4rem; margin-bottom: 10px; font-weight: 700; }
+        .hero p { font-size: 1.2rem; color: var(--gray-text); max-width: 600px; margin: 0 auto 40px; }
+
+        /* Room Grid */
+        .rooms-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 30px 5%;
+        }
+
+        .room-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+
+        .room-card:hover { transform: translateY(-10px); }
+
+        .room-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .room-info { padding: 25px; }
+        .room-info h3 { margin: 0; font-size: 1.4rem; text-transform: uppercase; }
+        .room-info p { color: var(--gray-text); margin: 10px 0; }
+        .room-price { font-weight: 700; font-size: 1.1rem; }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 15%;
+        }
+
+        .faq-title { text-align: center; margin-bottom: 50px; }
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+            cursor: pointer;
+        }
+
+        .faq-item h5 { margin: 0; font-size: 1.1rem; display: flex; justify-content: space-between; }
+
+        /* Footer */
+        footer {
+            padding: 60px 5%;
+            background: rgba(26, 26, 26, 0.9); /* Полупрозрачный тёмный */
+            color: white;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .rooms-container, .faq, footer {
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="#" class="logo">BELLAVISTA</a>
+    <div class="nav-links">
+        <a href="#">HOME</a>
+        <a href="#">ROOMS</a>
+        <a href="#">ABOUT</a>
+        <a href="#">CONTACT</a>
+    </div>
+    <a href="#" class="btn-book">BOOK NOW</a>
+</header>
+
+<section class="hero">
+    <span>/ ROOMS</span>
+    <h1>Find Your Perfect Room</h1>
+    <p>Thoughtfully designed spaces to match the way you stay.</p>
+</section>
+
+<div class="rooms-container">
+    <a href="#" class="room-card">
+        <img src="https://framerusercontent.com/images/5baqDWM1vBNHKw7HCNQPGO3PFTw.jpg" class="room-img" alt="Premier">
+        <div class="room-info">
+            <h3>Bellavista Premier</h3>
+            <p>The finest way to stay.</p>
+            <div class="room-price">$899 / for 1 Week</div>
+        </div>
+    </a>
+
+    <a href="#" class="room-card">
+        <img src="https://framerusercontent.com/images/y2z8SWTM9KYApISpwHugI0C9TU.jpg" class="room-img" alt="Signature">
+        <div class="room-info">
+            <h3>Bellavista Signature</h3>
+            <p>Where comfort meets character.</p>
+            <div class="room-price">$799 / for 1 Week</div>
+        </div>
+    </a>
+
+    <a href="#" class="room-card">
+        <img src="https://framerusercontent.com/images/irpzvput8T6wavQdmcsbXA48hjw.jpg" class="room-img" alt="Essential">
+        <div class="room-info">
+            <h3>Bellavista Essential</h3>
+            <p>Everything you need. Nothing you don’t.</p>
+            <div class="room-price">$599 / for 1 Week</div>
+        </div>
+    </a>
+</div>
+
+<section class="faq">
+    <div class="faq-title">
+        <span>/ FAQ</span>
+        <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq-item"><h5>What time is check-in and check-out? <i class="fa-solid fa-plus"></i></h5></div>
+    <div class="faq-item"><h5>Do you offer airport or local transfers? <i class="fa-solid fa-plus"></i></h5></div>
+    <div class="faq-item"><h5>Are pets allowed at the property? <i class="fa-solid fa-plus"></i></h5></div>
+    <div class="faq-item"><h5>Is parking available for guests? <i class="fa-solid fa-plus"></i></h5></div>
+</section>
+
+<footer>
+    <div>
+        <h3>Bellavista</h3>
+        <p>123 Vista Boulevard, Palm Heights District, Downtown Marina Area</p>
+    </div>
+    <div>
+        <h4>Sitemap</h4>
+        <p>Home<br>About<br>Rooms<br>Contact</p>
+    </div>
+    <div>
+        <h4>Social</h4>
+        <p>Instagram<br>Twitter (X)<br>LinkedIn</p>
+    </div>
+</footer>
+
+</body>
+</html>
